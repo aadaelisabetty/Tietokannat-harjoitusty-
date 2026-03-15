@@ -1,6 +1,27 @@
 -- Vaihe 4 Mallidatan lisääminen
+-- kategoirioiden lisääminen
 INSERT INTO Kategoria (nimi) VALUES ('Sci-Fi'), ('Komedia'), ('Draama');
-INSERT INTO Elokuva (nimi, julkaisuvuosi, kategoria_id) VALUES ('Inception', 2010, 1), ('Interstellar', 2014, 1), ('The Big Lebowski', 1998, 2);
+
+-- Lisätään asiakkaat: 
+INSERT INTO Asiakas (etunimi, sukunimi, sahkoposti) VALUES 
+('Matti', 'Meikäläinen', 'matti@esimerkki.fi');
+
+-- Lisätään elokuvat 
+INSERT INTO Elokuva (nimi,julkaisuvuosi, kategoria_id) VALUES 
+('Mean Girls', 2004, 2),
+('Barbie', 2023, 2),
+('Lemmikkien salainen maailma', 2016, 2),
+('Iron Man',2008, 1);
+
+--Lisätään vuokraustapahtumat
+
+INSERT INTO Vuokraus (asiakas_id) VALUES (1);
+INSERT INTO Vuokrausrivi (vuokraus_id, elokuva_id, palautuspvm) VALUES 
+(1, 1, '2026-03-20'), 
+(1, 3, '2026-02-13');
+
+-- Lisätään kyselyt eli SELECT-lauseet 
+
 -- Hae elokuvien määrä per kategoria 
 SELECT Kategoria.nimi, COUNT(Elokuva.elokuva_id) AS elokuvien_maara
 FROM Kategoria
@@ -17,7 +38,7 @@ INSERT INTO Vuokraus (asiakas_id) VALUES (1);
 INSERT INTO Vuokrausrivi (vuokraus_id, elokuva_id, palautuspvm) VALUES (1, 1, '2026-03-20'), (1, 3, '2026-03-20');
 
 -- Hae kaikki elokuvat ja niiden kategoriat
-SELECT Elokuva.nimi, Kategoria.nimi AS tyylilaji 
+SELECT Elokuva.nimi, Elokuva.julkaisuvuosi, Kategoria.nimi AS tyylilaji 
 FROM Elokuva
 JOIN Kategoria ON Elokuva.kategoria_id = Kategoria.kategoria_id;
 
