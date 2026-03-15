@@ -18,7 +18,7 @@ INSERT INTO Vuokrausrivi (vuokraus_id, elokuva_id, palautuspvm) VALUES (1, 1, '2
 
 -- Hae kaikki elokuvat ja niiden kategoriat
 SELECT Elokuva.nimi, Kategoria.nimi AS tyylilaji 
-FROM Elokuv
+FROM Elokuva
 JOIN Kategoria ON Elokuva.kategoria_id = Kategoria.kategoria_id;
 
 -- Hae asiakkaan vuokraukset
