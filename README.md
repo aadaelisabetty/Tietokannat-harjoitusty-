@@ -42,20 +42,29 @@ erDiagram
     ELOKUVA ||--o{ VUOKRAUSRIVI : kuuluu
 
     KATEGORIA {
-        int kategoria_id
+        int kategoria_id PK
         string nimi
     }
     ELOKUVA {
-        int elokuva_id
+        int elokuva_id PK
         string nimi
         int julkaisuvuosi
-        int kategoria_id
+        int kategoria_id FK
     }
     ASIAKAS {
-        int asiakas_id
+        int asiakas_id PK
         string etunimi
         string sukunimi
         string sahkoposti
     }
-```
-
+    VUOKRAUS {
+        int vuokraus_id PK
+        datetime vuokrauspvm
+        int asiakas_id FK
+    }
+    VUOKRAUSRIVI {
+        int rivi_id PK
+        int vuokraus_id FK
+        int elokuva_id FK
+        date palautuspvm
+    }
