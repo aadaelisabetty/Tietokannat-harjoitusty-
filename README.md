@@ -25,3 +25,6 @@ erDiagram
         string sahkoposti
     }
 ```
+=======
+Elokuvavuokraamo tietokannat harjoitustyö
+>>>>>>> 174170982008776778537d93598a15b3f3c5ade5
