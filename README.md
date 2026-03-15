@@ -1,1 +1,1 @@
-Elokuvavuokraamo tietokantjoen harjoitustyö
+Elokuvavuokraamo tietokannat harjoitustyö
